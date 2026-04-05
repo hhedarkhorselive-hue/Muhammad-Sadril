@@ -1,0 +1,88 @@
+{
+  "entities": {
+    "Hero": {
+      "title": "Hero",
+      "description": "Hero section content",
+      "type": "object",
+      "properties": {
+        "profileImage": { "type": "string", "description": "Profile image URL" },
+        "name": { "type": "string", "description": "Name in Bengali" }
+      },
+      "required": ["profileImage", "name"]
+    },
+    "PoliticalStory": {
+      "title": "Political Story",
+      "description": "A chapter in political life",
+      "type": "object",
+      "properties": {
+        "text": { "type": "string", "description": "Story text" },
+        "img": { "type": "string", "description": "Image URL" },
+        "order": { "type": "integer", "description": "Display order" }
+      },
+      "required": ["text", "img", "order"]
+    },
+    "DailyLifeImage": {
+      "title": "Daily Life Image",
+      "description": "Image for the daily life slider",
+      "type": "object",
+      "properties": {
+        "url": { "type": "string", "description": "Image URL" },
+        "order": { "type": "integer", "description": "Display order" }
+      },
+      "required": ["url", "order"]
+    },
+    "PersonalLife": {
+      "title": "Personal Life",
+      "description": "Personal life content",
+      "type": "object",
+      "properties": {
+        "mainImage": { "type": "string", "description": "First personal image" },
+        "secondImage": { "type": "string", "description": "Second personal image" },
+        "thirdImage": { "type": "string", "description": "Third personal image" },
+        "introText": { "type": "string", "description": "Intro text" },
+        "motherText": { "type": "string", "description": "Mother memory text" }
+      },
+      "required": ["mainImage", "secondImage", "thirdImage", "introText", "motherText"]
+    },
+    "Initiative": {
+      "title": "Initiative",
+      "description": "Business initiatives",
+      "type": "object",
+      "properties": {
+        "text": { "type": "string", "description": "Initiative description" },
+        "image1": { "type": "string", "description": "First initiative image" },
+        "image2": { "type": "string", "description": "Second initiative image" }
+      },
+      "required": ["text", "image1", "image2"]
+    },
+    "SocialFeed": {
+      "title": "Social Feed",
+      "description": "Social media screenshot",
+      "type": "object",
+      "properties": {
+        "screenshotUrl": { "type": "string", "description": "Facebook profile screenshot URL" }
+      },
+      "required": ["screenshotUrl"]
+    },
+    "ContactInfo": {
+      "title": "Contact Info",
+      "description": "Contact details",
+      "type": "object",
+      "properties": {
+        "email": { "type": "string", "description": "Email address" },
+        "phone": { "type": "string", "description": "Phone number" },
+        "address": { "type": "string", "description": "Physical address" }
+      },
+      "required": ["email", "phone", "address"]
+    }
+  },
+  "firestore": {
+    "/content/hero": { "schema": "Hero", "description": "Hero section content" },
+    "/politicalStories": { "schema": "PoliticalStory", "description": "Political life chapters" },
+    "/dailyLifeImages": { "schema": "DailyLifeImage", "description": "Daily life slider images" },
+    "/content/personal": { "schema": "PersonalLife", "description": "Personal life content" },
+    "/content/initiatives": { "schema": "Initiative", "description": "Business initiatives" },
+    "/content/social": { "schema": "SocialFeed", "description": "Social media screenshot" },
+    "/content/contact": { "schema": "ContactInfo", "description": "Contact details" }
+  }
+}
